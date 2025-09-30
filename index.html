@@ -5,253 +5,330 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Turf Air Coolers</title>
 
-  <!-- SEO & Social Meta -->
+  <!-- SEO Meta -->
   <meta name="description" content="Explore Turf Air Coolers - Personal, Desert, Tower, and Commercial models with powerful cooling and stylish design. Book your cooler today!">
-  <meta property="og:title" content="Turf Air Coolers">
-  <meta property="og:description" content="High-performance coolers for every need - Bookings open now!">
-  <meta property="og:image" content="https://i.postimg.cc/Cxd4Cv8w/Turf-Logo-2025-removebg-preview.png">
-  <meta property="og:url" content="https://yourwebsite.com/">
-  <meta property="og:type" content="website">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
-    /* Global Styles */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #fff;
+      background: #fff; /* major white background */
       color: #000;
-      scroll-behavior: smooth;
     }
 
-    /* Header */
+    /* Header with logo */
     header {
       width: 100%;
       text-align: center;
-      background-color: #f5f5f5;
-      padding: 15px 0;
+      background: #fff; /* white behind logo */
+      padding: 20px 0;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     }
 
     .logo {
-      width: 300px;
+      width: 350px; /* increased logo size */
       height: auto;
-      filter: drop-shadow(0 0 10px #ffcc00) drop-shadow(0 0 20px #ffcc00);
     }
 
-    /* Navigation */
-    nav {
+    /* Moving text banner */
+    .banner-marquee {
+      overflow: hidden;
       background: #ffcc00;
-      padding: 10px;
+      color: #000;
+      padding: 15px 0;
+      font-weight: bold;
+      font-size: 1.2rem;
       text-align: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
     }
 
-    nav a {
-      color: #000;
+    .marquee-content {
+      display: inline-block;
+      white-space: nowrap;
+      animation: scroll-left 25s linear infinite;
+    }
+
+    .marquee-content span {
+      margin: 0 50px;
+      display: inline-block;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    /* Large moving banners */
+    .moving-banners {
+      position: relative;
+      overflow: hidden;
+      margin: 30px auto;
+      max-width: 1200px;
+      height: 250px;
+    }
+
+    .banner {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .banner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    /* Banner animations */
+    .banner1 { animation: moveLeftRight 30s ease-in-out infinite alternate; }
+    .banner2 { animation: moveRightLeft 35s ease-in-out infinite alternate; }
+    .banner3 { animation: moveLeftRight 32s ease-in-out infinite alternate; }
+
+    @keyframes moveLeftRight { 0% { transform: translateX(-10%); } 100% { transform: translateX(10%); } }
+    @keyframes moveRightLeft { 0% { transform: translateX(10%); } 100% { transform: translateX(-10%); } }
+
+    /* Text categories (12", 16", etc.) */
+    .text-categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #f0f0f0;
+      border-radius: 10px;
+    }
+
+    .text-categories a {
       text-decoration: none;
-      margin: 0 15px;
+      color: #000;
+      background: #fff;
+      border: 1px solid #000;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .text-categories a:hover {
+      background: #ffcc00;
+      color: #000;
+      border-color: #ffcc00;
+    }
+
+    /* Image category banners */
+    .image-categories {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #f9f9f9;
+      border-bottom: 1px solid #000;
+    }
+
+    .image-categories a {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      color: #000;
+      background: #fff;
+      border: 1px solid #000;
+      border-radius: 8px;
+      width: 180px;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .image-categories a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    }
+
+    .image-categories img {
+      width: 100%;
+      height: 120px;
+      object-fit: cover;
+    }
+
+    .image-categories span {
+      display: block;
+      padding: 5px 0;
       font-weight: bold;
     }
 
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    /* Container & Headings */
+    /* Product section below image categories */
     .container {
-      padding: 20px;
+      background: #fff;
+      color: #000;
+      padding: 25px;
+      margin: 20px auto;
+      border-radius: 12px;
+      max-width: 1200px;
+      border: 1px solid #000;
     }
 
-    h2 {
-      color: #ffcc00;
-      margin-top: 40px;
+    .container h2 {
       text-align: center;
+      margin-bottom: 20px;
+      color: #000;
     }
 
-    /* Products Grid */
     .products {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       gap: 20px;
+      margin-bottom: 40px;
     }
 
     .product {
-      background: #fafafa;
-      padding: 15px;
-      border-radius: 8px;
-      width: 250px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      width: 280px;
       text-align: center;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      border: 1px solid #000;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .product:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
     }
 
     .product img {
       width: 100%;
       height: auto;
-      border-radius: 5px;
+      border-radius: 8px;
+      margin-bottom: 12px;
     }
 
-    .product:hover {
-      transform: scale(1.03);
-      box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-    }
-
-    /* Buttons */
     .btn {
       display: inline-block;
       background: #ffcc00;
       color: #000;
-      padding: 8px 12px;
-      margin-top: 10px;
-      border-radius: 4px;
+      padding: 10px 15px;
+      margin-top: 12px;
+      border-radius: 6px;
       text-decoration: none;
       font-weight: bold;
-      transition: background 0.3s ease;
+      transition: 0.3s;
     }
 
+    .btn i { margin-right: 6px; }
+
     .btn:hover {
-      background: #25D366; /* WhatsApp green hover */
+      background: #25D366;
       color: #fff;
     }
 
     /* Footer */
     footer {
-      background: #f5f5f5;
+      background: #fff;
+      color: #000;
       text-align: center;
       padding: 15px;
       margin-top: 40px;
       font-size: 14px;
-      color: #555;
+      border-top: 1px solid #000;
     }
 
     /* Responsive */
-    @media (max-width: 768px) {
-      .products {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      nav a {
-        display: block;
-        margin: 8px 0;
-      }
+    @media (max-width: 1024px) {
+      .moving-banners { height: 200px; }
+      .product { width: 45%; }
     }
 
-    @media (max-width: 600px) {
-      .product {
-        width: 100%;
-        max-width: 400px;
-        margin: 10px 0;
-      }
+    @media (max-width: 768px) {
+      .products, .image-categories, .text-categories { flex-direction: column; align-items: center; }
+      .image-categories a, .product { width: 90%; max-width: 400px; }
+      .moving-banners { height: 180px; }
+    }
+
+    @media (max-width: 480px) {
+      .marquee-content span { margin: 0 15px; font-size: 0.9rem; }
+      .moving-banners { height: 150px; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Header with glowing logo -->
+  <!-- Header -->
   <header>
-    <img src="https://i.postimg.cc/Cxd4Cv8w/Turf-Logo-2025-removebg-preview.png" alt="Turf Logo" class="logo">
+    <img src="https://i.postimg.cc/tCSvGSgC/logo.png" alt="Turf Logo" class="logo">
   </header>
 
-  <!-- Navigation -->
-  <nav>
-    <a href="#12inch">12" Models</a>
-    <a href="#16inch">16" Coolers</a>
-    <a href="#tower">Tower Coolers</a>
-    <a href="#plastic">Plastic</a>
-    <a href="#metal">Metal</a>
-    <a href="#commercial">Commercial</a>
-    <a href="#tent">Tent</a>
-    <a href="#accessories">Accessories</a>
-  </nav>
-
-  <div class="container">
-    <!-- Category 1 -->
-    <h2 id="12inch">12" Models</h2>
-    <div class="products">
-      <div class="product">
-        <h3>Candy 12"</h3>
-        <p>Compact model, perfect for personal use.</p>
-        <a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20Candy%2012%22" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a>
-      </div>
-      <div class="product">
-        <h3>Tornado 12"</h3>
-        <p>Efficient cooling in a compact size.</p>
-        <a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20Tornado%2012%22" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a>
-      </div>
-      <div class="product">
-        <h3>Swiss Plus Long Tower 12"</h3>
-        <p>Stylish long tower cooler with powerful air throw.</p>
-        <a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20Swiss%20Plus%20Long%20Tower%2012%22" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a>
-      </div>
-    </div>
-
-    <!-- Category 2 -->
-    <h2 id="16inch">16" Coolers</h2>
-    <div class="products">
-      <div class="product"><h3>Shagun 16"</h3><a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20Shagun%2016%22" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a></div>
-      <div class="product"><h3>Elite 16"</h3><a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20Elite%2016%22" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a></div>
-      <div class="product"><h3>Veenus 16"</h3><a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20Veenus%2016%22" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a></div>
-      <div class="product"><h3>EV Commercial 16"</h3><a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20EV%20Commercial%2016%22" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a></div>
-    </div>
-
-    <!-- Category 3 -->
-    <h2 id="tower">Tower Coolers</h2>
-    <div class="products">
-      <div class="product"><h3>Astor Tower</h3><a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20Astor%20Tower" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a></div>
-      <div class="product"><h3>Big Tower</h3><a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20Big%20Tower" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a></div>
-      <div class="product"><h3>Amaari Tower</h3><a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20Amaari%20Tower" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a></div>
-      <div class="product"><h3>Anitilia Tower</h3><a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20Anitilia%20Tower" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a></div>
-      <div class="product"><h3>GT One with Tuffen Glass</h3><a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20GT%20One%20with%20Tuffen%20Glass" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a></div>
-      <div class="product"><h3>Century Tower</h3><a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20Century%20Tower" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a></div>
-    </div>
-
-    <!-- Category 4 -->
-    <h2 id="plastic">Plastic Coolers (with Exhaust Motor)</h2>
-    <div class="products">
-      <div class="product"><h3>Jetking</h3><a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20Jetking" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a></div>
-      <div class="product"><h3>Sky Pro</h3><a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20Sky%20Pro" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a></div>
-      <div class="product"><h3>Nova</h3><a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20Nova" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a></div>
-    </div>
-
-    <!-- Category 5 -->
-    <h2 id="metal">Metal Coolers (with Exhaust Motor)</h2>
-    <div class="products">
-      <div class="product"><h3>Comet Metal</h3><a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20Comet%20Metal" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a></div>
-      <div class="product"><h3>Mack Metal</h3><a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20Mack%20Metal" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a></div>
-      <div class="product"><h3>Master Metal</h3><a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20Master%20Metal" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a></div>
-    </div>
-
-    <!-- Category 6 -->
-    <h2 id="commercial">Commercial Coolers</h2>
-    <div class="products">
-      <div class="product"><h3>Mahabali Commercial</h3><a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20Mahabali%20Commercial" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a></div>
-      <div class="product"><h3>Hummer Commercial</h3><a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20Hummer%20Commercial" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a></div>
-      <div class="product"><h3>Black Titan Commercial</h3><a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20Black%20Titan%20Commercial" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a></div>
-      <div class="product"><h3>K-26 Commercial</h3><a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20K-26%20Commercial" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a></div>
-    </div>
-
-    <!-- Category 7 -->
-    <h2 id="tent">Tent Coolers</h2>
-    <div class="products">
-      <div class="product"><h3>Bully 30"</h3><a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20Bully%2030%22" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a></div>
-    </div>
-
-    <!-- Category 8 -->
-    <h2 id="accessories">Cooler Accessories</h2>
-    <div class="products">
-      <div class="product"><h3>Metal Cooler Trolley</h3><a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20Metal%20Cooler%20Trolley" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a></div>
-      <div class="product"><h3>Plastic Wheel (Set of 4)</h3><a class="btn" href="https://wa.me/919876543210?text=I%20am%20interested%20in%20Plastic%20Wheel%20Set%20of%204" target="_blank" rel="noopener noreferrer">📲 Enquire on WhatsApp</a></div>
+  <!-- Moving text banner -->
+  <div class="banner-marquee">
+    <div class="marquee-content">
+      <span>📢 Check out our brand new Tower Air Cooler designs!</span>
+      <span>❄ Powerful cooling for homes, offices & events!</span>
+      <span>✅ Trusted Air Cooler Quality</span>
     </div>
   </div>
 
+  <!-- Large moving banners -->
+  <div class="moving-banners">
+    <div class="banner banner1">
+      <img src="https://i.postimg.cc/pT80tR6q/Moving-Banner1.jpg" alt="Air Cooler Banner 1">
+    </div>
+    <div class="banner banner2">
+      <img src="https://i.postimg.cc/vHJ9nfqx/Moving-Banner2.jpg" alt="Air Cooler Banner 2">
+    </div>
+    <div class="banner banner3">
+      <img src="https://i.postimg.cc/Nj8yrVr0/Moving-Banner-3.jpg" alt="Air Cooler Banner 3">
+    </div>
+  </div>
+
+  <!-- Text Categories -->
+  <div class="text-categories">
+    <a href="#12inch-products">12" Air Coolers</a>
+    <a href="#16inch-products">16" Air Coolers</a>
+    <a href="#18inch-products">18" Air Coolers</a>
+    <a href="#tower-products">Tower Air Coolers</a>
+    <a href="#plastic-products">Plastic Exhaust Air Coolers</a>
+    <a href="#metal-products">Metal Exhaust Air Coolers</a>
+    <a href="#commercial-products">Commercial Air Coolers</a>
+    <a href="#tent-products">Tent Air Coolers</a>
+    <a href="#accessories-products">Air Cooler Accessories</a>
+  </div>
+
+  <!-- Image Category Banners -->
+  <div class="image-categories">
+    <a href="#12inch-products"><img src="https://via.placeholder.com/180x120?text=12+Inch" alt="12 inch"><span>12" Air Coolers</span></a>
+    <a href="#16inch-products"><img src="https://via.placeholder.com/180x120?text=16+Inch" alt="16 inch"><span>16" Air Coolers</span></a>
+    <a href="#18inch-products"><img src="https://via.placeholder.com/180x120?text=18+Inch" alt="18 inch"><span>18" Air Coolers</span></a>
+    <a href="#tower-products"><img src="https://via.placeholder.com/180x120?text=Tower" alt="Tower"><span>Tower Air Coolers</span></a>
+    <a href="#plastic-products"><img src="https://via.placeholder.com/180x120?text=Plastic+Exhaust" alt="Plastic"><span>Plastic Exhaust</span></a>
+    <a href="#metal-products"><img src="https://via.placeholder.com/180x120?text=Metal+Exhaust" alt="Metal"><span>Metal Exhaust</span></a>
+    <a href="#commercial-products"><img src="https://via.placeholder.com/180x120?text=Commercial" alt="Commercial"><span>Commercial</span></a>
+    <a href="#tent-products"><img src="https://via.placeholder.com/180x120?text=Tent" alt="Tent"><span>Tent Air Coolers</span></a>
+  </div>
+
+  <!-- Example Product Section -->
+  <div class="container" id="12inch-products">
+    <h2>12" Air Coolers</h2>
+    <div class="products">
+      <div class="product">
+        <h3>Candy 12"</h3>
+        <a class="btn" href="https://wa.me/919876543210?text=Interested+in+Candy+12" target="_blank"><i class="fab fa-whatsapp"></i> Enquire</a>
+      </div>
+      <div class="product">
+        <h3>Tornado 12"</h3>
+        <a class="btn" href="https://wa.me/919876543210?text=Interested+in+Tornado+12" target="_blank"><i class="fab fa-whatsapp"></i> Enquire</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
   <footer>
     © 2025 Turf. All Rights Reserved.
   </footer>
